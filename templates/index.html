@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>mars facts</h1>
+            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">generate the webpage</a></p>
+            <p>{{mars_.news_title}}</p>
+
+        </div>
+
+            
+                    <div class="col-lg-4">
+                            <div class="card" style="width: 20rem;">
+                                <div class="card-body">
+                                  <h4 class="card-title">Mission to mars_</h4>
+                                {%for pics in mars_.hemisphere_pic_urls %}
+                                  <h4><img src=" {{ pics.image_url }}" alt="{{pics.title}}"></h4>
+
+                                {%endfor%}
+                                  <h3> <img src= "{{ mars_.featured_image_url }}"  alt="mars"></h3>
+                                  <h6 class="card-subtitle mb-2 text-muted">{{ mars_.news_title }} - {{ mars_.news_paragraph }}:| {{mars_.weather_tweet}}</h6>
+                                  <p class="card-text">Surf: {{ mars_.html_table|safe }} |</p>
+                                </div>
+                              </div>
+                          </div>
+          
+
+    </div>
+
+</body>
+
+</html>
